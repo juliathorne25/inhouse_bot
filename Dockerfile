@@ -11,6 +11,3 @@ RUN pip install pytest
 WORKDIR /inhouse_bot
 COPY /inhouse_bot/ ./inhouse_bot
 COPY run_bot.py .
-
-# Running the bot itself
-CMD python -u run_bot.py
