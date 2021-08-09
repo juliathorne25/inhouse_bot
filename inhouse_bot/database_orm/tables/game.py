@@ -12,6 +12,7 @@ from sqlalchemy.orm.collections import mapped_collection
 from inhouse_bot.database_orm import bot_declarative_base
 from inhouse_bot.database_orm.tables.player import Player
 
+from inhouse_bot.common_utils.constants import PREFIX
 from inhouse_bot.common_utils.fields import roles_list, side_enum
 from inhouse_bot.common_utils.emoji_and_thumbnails import get_role_emoji, get_champion_emoji
 
@@ -92,8 +93,8 @@ class Game(bot_declarative_base):
             embed = Embed(
                 title="📢 Game accepted 📢",
                 description=f"Game {self.id} has been validated and added to the database\n"
-                f"Once the game has been played, one of the winners can score it with `!won`\n"
-                f"If you wish to cancel the game, use `!cancel`",
+                f"Once the game has been played, one of the winners can score it with `{PREFIX}won`\n"
+                f"If you wish to cancel the game, use `{PREFIX}cancel`",
             )
         else:
             raise ValueError
